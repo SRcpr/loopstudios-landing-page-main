@@ -122,24 +122,30 @@ h1,h2,h3{
 // main
 .main{
     background-color: $white;
-    padding: 0 24px;
+    padding: 72px 24px;
+    .container{
+        padding: 0;
+    }
     .hero{
-        padding: 72px 0px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
         &__content{
             display: flex;
             flex-direction: column;
             gap: 20px;
             padding-top: 72px;
+            color: $black;
         }
         h2{
             text-transform: uppercase;
             font-size: 32px;
             text-align: center;
-            color: $black;
             margin: 0 28px;
             line-height: 1.2;
         }
         p{
+            color: $black;
             font-size: 16px;
             margin: 0 28px;
             text-align: center;
@@ -301,6 +307,23 @@ h1,h2,h3{
     }
     // main
     .main{
+        .hero{
+            border: 1px solid red;
+            flex-direction: row;
+            picture{
+                width: calc(100% - 50%);
+            }
+        }
+    
+        .hero__content{
+            position: absolute;
+            bottom: 0;
+            left: 35%;
+            padding: clamp(8px, calc(-28.571px + 4.762vw), 40px);
+            padding-bottom: 0;
+            background-color: $white;
+            
+        }
         .gallery{
             grid-template-columns: 1fr auto;
             grid-template-areas:
